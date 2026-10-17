@@ -1,0 +1,66 @@
+:root {
+  /* Bảng màu lấy từ logo KiotViet */
+  --kv-navy: #002957;
+  --kv-blue: #0070f4;
+  --kv-green: #00b63e;
+  --kv-lime: #5be92a;
+  --kv-cyan: #3ae3ff;
+
+  /* Tông 20/10: hồng – mận – vàng ánh kim */
+  --rose: #ff5c9a;
+  --rose-deep: #e0286a;
+  --plum: #3d0a2c;
+  --gold: #ffd36e;
+  --gold-deep: #f4a422;
+
+  --bg-1: var(--plum);
+  --bg-2: #a3175a;
+  --stage: rgb(255 255 255 / 0.09);
+  --stage-border: rgb(255 255 255 / 0.22);
+  --text: #ffffff;
+  --muted: #ffd0e3;
+  --accent: var(--rose);
+  --accent-dark: #a5104b;
+  --highlight: var(--gold);
+  --tile-face: #fff1f6;
+  --tile-edge: var(--rose-deep);
+  --tile-text: #5a0b36;
+  --ok: var(--kv-lime);
+  --warn: #ffb020;
+  --bad: #ff5a6e;
+
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg-1);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgb(255 120 180 / 0.4), transparent 42%),
+    radial-gradient(circle at 88% 92%, rgb(255 196 90 / 0.28), transparent 45%),
+    radial-gradient(circle at 80% 15%, rgb(190 60 255 / 0.22), transparent 40%),
+    linear-gradient(160deg, var(--bg-1), #7a0f45 55%, var(--bg-2));
+  background-attachment: fixed;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

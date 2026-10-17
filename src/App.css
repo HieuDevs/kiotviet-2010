@@ -1,0 +1,1235 @@
+.stage {
+  width: min(720px, 100%);
+  padding: clamp(24px, 5vw, 44px);
+  border-radius: 28px;
+  background: var(--stage);
+  border: 1px solid var(--stage-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 80px rgb(0 0 0 / 0.35);
+  text-align: center;
+  container-type: inline-size;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--highlight);
+}
+
+/* ---------- Nút ---------- */
+.btn {
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  border: 0;
+  border-radius: 14px;
+  padding: 14px 24px;
+  transition: transform 0.1s, filter 0.15s;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(180deg, #ff7cb0, var(--rose-deep));
+  box-shadow:
+    0 5px 0 var(--accent-dark),
+    0 10px 30px rgb(255 60 140 / 0.45);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-primary:active {
+  box-shadow:
+    0 3px 0 var(--accent-dark),
+    0 8px 24px rgb(255 60 140 / 0.4);
+}
+
+.btn-lg {
+  font-size: 20px;
+  padding: 18px 40px;
+  margin-top: 8px;
+}
+
+/* ---------- Thanh logo ---------- */
+.brand-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 22px;
+  padding: 10px 22px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.25);
+}
+
+.brand-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--kv-navy);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.brand-main img {
+  height: 32px;
+}
+
+.brand-tag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--rose), var(--rose-deep));
+  white-space: nowrap;
+}
+
+/* ---------- Màn mở đầu ---------- */
+.stage.intro {
+  position: relative;
+  width: min(1040px, 100%);
+  padding: clamp(32px, 6vw, 68px) clamp(20px, 6vw, 72px);
+}
+
+.intro .eyebrow {
+  font-size: 15px;
+}
+
+.logo {
+  margin: 10px 0 6px;
+  font-size: clamp(52px, 10vw, 104px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-shadow: 0 6px 0 rgb(0 0 0 / 0.18);
+}
+
+.logo span {
+  display: block;
+  background: linear-gradient(180deg, #fff6d8, var(--gold) 45%, var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 0 rgb(90 10 50 / 0.45));
+  text-shadow: none;
+}
+
+/* Lời chúc kiểu chữ viết tay */
+.script {
+  margin: 0 0 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(26px, 4.5vw, 44px);
+  font-weight: 700;
+  color: #ffc2da;
+  text-shadow: 0 2px 12px rgb(255 60 140 / 0.6);
+}
+
+.intro .tiles.sm {
+  --tile-size: clamp(16px, var(--fit), 58px);
+}
+
+.intro .example-answer,
+.intro .arrow {
+  font-size: clamp(22px, 3.5vw, 34px);
+}
+
+.intro .rules li {
+  font-size: 17px;
+  padding: 10px 20px;
+}
+
+.intro .btn-lg {
+  font-size: 24px;
+  padding: 20px 52px;
+}
+
+.intro .btn-fight {
+  min-width: 260px;
+  font-size: clamp(30px, 5vw, 40px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  animation: throb 1.2s ease-in-out infinite;
+}
+
+@keyframes throb {
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Hoa trang trí ở các góc thẻ */
+.deco {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 20px rgb(80 0 40 / 0.45));
+  animation: bloom 6s ease-in-out infinite alternate;
+}
+
+.deco-bl {
+  left: -70px;
+  bottom: -60px;
+}
+
+.deco-tl {
+  left: -36px;
+  top: -40px;
+  animation-delay: -2s;
+}
+
+.deco-br {
+  right: 40px;
+  bottom: -34px;
+  animation-delay: -4s;
+}
+
+/* Con dấu 20/10 */
+.date-seal {
+  display: grid;
+  place-content: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  text-align: center;
+  color: #5a0b36;
+  background: radial-gradient(circle at 35% 30%, #fff6d8, var(--gold) 55%, var(--gold-deep));
+  box-shadow:
+    0 0 0 6px rgb(255 255 255 / 0.25),
+    0 14px 30px rgb(60 0 30 / 0.5);
+  line-height: 1;
+}
+
+.date-seal-day {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.date-seal-month {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro-seal {
+  position: absolute;
+  top: -44px;
+  right: -40px;
+  transform: rotate(12deg);
+  animation: swing 4s ease-in-out infinite alternate;
+}
+
+/* ---------- Cánh hoa rơi ---------- */
+.petals {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  top: -40px;
+  left: var(--x);
+  opacity: var(--o);
+  animation: fall var(--d) linear var(--delay) infinite;
+}
+
+.petal i {
+  display: block;
+  width: var(--s);
+  height: calc(var(--s) * 1.25);
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, #ffd1e3, var(--rose));
+  box-shadow: inset -2px -2px 4px rgb(160 0 70 / 0.25);
+  animation: sway calc(var(--d) / 3) ease-in-out infinite alternate;
+}
+
+.petal.gold i {
+  background: linear-gradient(135deg, #fff3c4, var(--gold-deep));
+}
+
+.example {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 16px;
+  margin-bottom: 28px;
+}
+
+.arrow {
+  font-size: 24px;
+  color: var(--rose);
+}
+
+.example-answer {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--highlight);
+}
+
+.rules {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rules li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.rules b {
+  color: var(--text);
+}
+
+/* ---------- HUD ---------- */
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.pill {
+  min-width: 96px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.pill b {
+  color: var(--text);
+  font-size: 20px;
+}
+
+.ring {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  --ring-color: var(--ok);
+}
+
+.ring.warn {
+  --ring-color: var(--warn);
+}
+
+.ring.danger {
+  --ring-color: var(--bad);
+  animation: pulse 1s infinite;
+}
+
+.ring svg {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 7;
+}
+
+.ring-track {
+  stroke: rgb(255 255 255 / 0.1);
+}
+
+.ring-bar {
+  stroke: var(--ring-color);
+  stroke-linecap: round;
+  transition:
+    stroke-dashoffset 0.1s linear,
+    stroke 0.3s;
+  filter: drop-shadow(0 0 6px var(--ring-color));
+}
+
+.ring-text {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--ring-color);
+}
+
+/* ---------- Ô chữ ---------- */
+.tiles {
+  /* Co ô theo số chữ cái để cả từ luôn nằm trên một hàng */
+  --fit: calc((100cqw - 8px) / (var(--n) * 1.3));
+  --tile-size: clamp(16px, var(--fit), 62px);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.tiles.sm {
+  --tile-size: clamp(16px, var(--fit), 38px);
+  margin: 0;
+}
+
+.tile-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.tile {
+  width: var(--tile-size);
+  height: calc(var(--tile-size) * 1.15);
+  display: grid;
+  place-items: center;
+  font-size: calc(var(--tile-size) * 0.55);
+  font-weight: 900;
+  color: var(--tile-text);
+  background: linear-gradient(180deg, #ffffff, var(--tile-face));
+  border-radius: calc(var(--tile-size) * 0.2);
+  box-shadow:
+    0 calc(var(--tile-size) * 0.1) 0 var(--tile-edge),
+    0 12px 20px rgb(0 0 0 / 0.3);
+  animation: pop 0.35s backwards cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.slash {
+  font-size: calc(var(--tile-size) * 0.5);
+  font-weight: 300;
+  color: var(--gold);
+  padding: 0 calc(var(--tile-size) * 0.05);
+}
+
+/* ---------- Điều khiển ---------- */
+.actions .btn-lg {
+  margin-top: 0;
+}
+
+.space-hint {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.credit {
+  margin: 24px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.credit b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+kbd {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 0 2px;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--text);
+  background: rgb(255 255 255 / 0.12);
+  box-shadow: 0 2px 0 rgb(255 255 255 / 0.2);
+}
+
+.btn kbd {
+  margin-left: 6px;
+  color: inherit;
+  background: rgb(0 0 0 / 0.12);
+  box-shadow: none;
+}
+
+.btn-ghost {
+  color: var(--text);
+  background: rgb(255 255 255 / 0.1);
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.2);
+}
+
+.btn-ghost:hover {
+  background: rgb(255 255 255 / 0.16);
+}
+
+.btn-ghost kbd {
+  background: rgb(255 255 255 / 0.14);
+}
+
+/* Nút âm thanh + reset ở góc phải trên */
+.corner {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+.corner .btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.75;
+  backdrop-filter: blur(8px);
+}
+
+.corner .btn:hover {
+  opacity: 1;
+}
+
+.corner .icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: -4px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Nền đổi màu theo thời gian: xanh → cam → đỏ ---------- */
+.urgency-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.urgency-bg::before,
+.urgency-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.4s linear;
+}
+
+.urgency-bg::before {
+  background:
+    radial-gradient(circle at 50% 35%, rgb(255 190 60 / 0.35), transparent 60%),
+    linear-gradient(160deg, #7a2a05, #e8650a);
+  opacity: min(1, calc(var(--urgency) * 1.6));
+}
+
+.urgency-bg::after {
+  background:
+    radial-gradient(circle at 50% 35%, rgb(255 80 80 / 0.3), transparent 60%),
+    linear-gradient(160deg, #4a0610, #d4142e);
+  opacity: max(0, calc((var(--urgency) - 0.55) * 2.2));
+}
+
+/* Những giây cuối: viền đỏ nháy theo nhịp tích-tắc */
+.urgency-bg.danger {
+  animation: alarm 0.5s ease-in-out infinite alternate;
+}
+
+/* ---------- Thanh thời gian ---------- */
+.time-bar {
+  height: 10px;
+  margin: -8px 0 28px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.1);
+}
+
+.time-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transform-origin: left;
+  background: var(--bar-color, var(--ok));
+  box-shadow: 0 0 12px var(--bar-color, var(--ok));
+  transition:
+    transform 0.1s linear,
+    background 0.3s;
+}
+
+.time-bar.warn {
+  --bar-color: var(--warn);
+}
+
+.time-bar.danger {
+  --bar-color: var(--bad);
+}
+
+/* ---------- Ảnh chế khi đoán đúng / hết giờ ---------- */
+.play-layout .stage {
+  position: relative;
+}
+
+.meme {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: clamp(12px, 3vw, 36px);
+  pointer-events: none;
+}
+
+.meme-card {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 12px 12px 34px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 6px rgb(255 255 255 / 0.25),
+    0 30px 60px rgb(0 0 0 / 0.55);
+}
+
+.meme-photo {
+  width: clamp(180px, 22vw, 270px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #222;
+}
+
+.meme-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Chữ kiểu meme: in hoa, viền đen dày; tràn đều hai bên mà không làm giãn khung ảnh */
+.meme-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffffff;
+  -webkit-text-stroke: 8px #000000;
+  paint-order: stroke fill;
+  text-shadow: 0 6px 0 rgb(0 0 0 / 0.35);
+}
+
+/* Đúng: xoay vèo vào, nảy rồi lắc lư */
+.meme.win .meme-card {
+  animation:
+    meme-spin-in 0.7s cubic-bezier(0.2, 1.6, 0.4, 1) both,
+    meme-wobble 0.6s 0.7s ease-in-out infinite alternate;
+}
+
+.meme.win .meme-caption {
+  animation: meme-stamp 0.45s 0.45s cubic-bezier(0.3, 1.8, 0.5, 1) both;
+}
+
+.confetti {
+  position: absolute;
+  top: 170px;
+  left: 50%;
+}
+
+.confetti i {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--color);
+  animation: confetti-burst 1.1s cubic-bezier(0.1, 0.8, 0.3, 1) both;
+}
+
+/* Sai: trượt lên rung bần bật, ảnh xám vỡ hạt, zoom kịch tính vào mặt */
+.meme.fail .meme-card {
+  animation:
+    meme-drop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both,
+    meme-shake 0.12s 0.5s linear 6,
+    meme-out 0.35s 2.85s ease-in both;
+}
+
+.meme.fail .meme-photo img {
+  filter: grayscale(0.85) contrast(1.3);
+  animation: meme-zoom 1.6s 0.5s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+
+.meme.fail .meme-caption {
+  color: #ffd0d8;
+  animation: meme-stamp 0.4s 0.35s cubic-bezier(0.3, 1.8, 0.5, 1) both;
+}
+
+/* ---------- Hết giờ ---------- */
+.timeup {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgb(255 90 110 / 0.12);
+  border: 2px solid var(--bad);
+  animation: pop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.timeup-title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bad);
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ---------- Hiện đáp án ---------- */
+.reveal {
+  padding: 20px;
+  border-radius: 18px;
+  animation: pop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.reveal p {
+  margin: 0;
+}
+
+.reveal.solved {
+  background: rgb(91 233 42 / 0.14);
+  border: 2px solid var(--ok);
+}
+
+.reveal.revealed {
+  background: rgb(255 176 32 / 0.12);
+  border: 2px solid var(--warn);
+}
+
+.reveal-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.reveal.solved .reveal-title {
+  color: var(--ok);
+}
+
+.reveal.revealed .reveal-title {
+  color: var(--warn);
+}
+
+.reveal .reveal-answer {
+  margin-top: 4px;
+  font-size: clamp(26px, 7vw, 44px);
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--highlight);
+}
+
+/* ---------- Bố cục chơi + sidebar ---------- */
+.play-layout {
+  width: min(1480px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.play-layout .stage {
+  width: 100%;
+  padding: clamp(24px, 4vw, 56px);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Màn chơi to hơn để chiếu lên màn hình lớn */
+.play-layout .tiles {
+  --tile-size: clamp(16px, var(--fit), 112px);
+  margin-bottom: 44px;
+}
+
+.play-layout .hud {
+  margin-bottom: 44px;
+}
+
+.play-layout .pill {
+  padding: 12px 22px;
+  font-size: 18px;
+}
+
+.play-layout .pill b {
+  font-size: 28px;
+}
+
+.play-layout .ring {
+  width: 132px;
+  height: 132px;
+}
+
+.play-layout .ring-text {
+  font-size: 46px;
+}
+
+.play-layout .reveal .reveal-answer {
+  font-size: clamp(26px, 7vw, 72px);
+}
+
+/* Trên nền đỏ, đổi đồng hồ và chữ "Hết giờ" sang trắng cho dễ đọc */
+.play-layout.danger .ring,
+.play-layout.danger .time-bar {
+  --ring-color: #ffffff;
+  --bar-color: #ffffff;
+}
+
+.play-layout.danger .timeup-title {
+  color: #ffffff;
+}
+
+.play-layout.danger .stage {
+  border-color: var(--bad);
+  box-shadow:
+    0 0 0 3px rgb(255 90 110 / 0.5),
+    0 0 60px rgb(255 60 80 / 0.45),
+    0 30px 80px rgb(0 0 0 / 0.35);
+}
+
+.sidebar {
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--stage);
+  border: 1px solid var(--stage-border);
+  backdrop-filter: blur(12px);
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.count {
+  min-width: 28px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-align: center;
+  color: var(--tile-text);
+  background: var(--highlight);
+}
+
+.sidebar-empty {
+  margin: 0;
+  color: rgb(255 255 255 / 0.4);
+  font-size: 14px;
+}
+
+.opened {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.opened-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.06);
+  border-left: 4px solid var(--status-color);
+  animation: pop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.opened-answer {
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.opened-tiles {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ---------- Kết quả ---------- */
+.final-score {
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.final-num {
+  font-size: clamp(80px, 18vw, 120px);
+  font-weight: 900;
+  color: var(--highlight);
+  text-shadow: 0 8px 0 rgb(0 0 0 / 0.25);
+}
+
+.final-total {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.final-label {
+  margin: 8px 0 28px;
+  color: var(--muted);
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 8px;
+  max-height: 46vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.06);
+  border-left: 4px solid var(--status-color);
+}
+
+.result-tiles {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  overflow-wrap: anywhere;
+}
+
+.result-answer {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Màu theo trạng thái: đoán ra / xem đáp án / bỏ qua */
+.solved {
+  --status-color: var(--ok);
+}
+
+.revealed {
+  --status-color: var(--warn);
+}
+
+.skipped {
+  --status-color: var(--bad);
+}
+
+.badge {
+  min-width: 72px;
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--status-color);
+  background: color-mix(in srgb, var(--status-color) 20%, transparent);
+}
+
+.btn,
+.pill {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .play-layout {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 720px;
+  }
+
+  .sidebar {
+    max-height: none;
+  }
+}
+
+/* Màn hẹp: chừa chỗ phía trên để nút góc không đè lên thanh logo */
+@media (max-width: 1100px) {
+  body {
+    padding-top: 76px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-bar {
+    gap: 8px 14px;
+    padding: 8px 14px;
+  }
+
+  .brand-main {
+    font-size: 18px;
+  }
+
+  .brand-main img {
+    height: 26px;
+  }
+
+  .brand-tag {
+    font-size: 17px;
+  }
+
+  .date-seal {
+    width: 76px;
+    height: 76px;
+  }
+
+  .date-seal-day {
+    font-size: 32px;
+  }
+
+  .date-seal-month {
+    font-size: 8px;
+  }
+
+  .intro-seal {
+    top: -34px;
+    right: -6px;
+  }
+
+  .stage.intro {
+    padding-top: 64px;
+  }
+
+  .intro .eyebrow {
+    font-size: 12px;
+  }
+
+  .deco-bl {
+    width: 120px;
+    height: 120px;
+    left: -40px;
+    bottom: -40px;
+  }
+
+  .deco-tl {
+    width: 70px;
+    height: 70px;
+    left: -16px;
+  }
+
+  body {
+    padding: 76px 12px 16px;
+  }
+
+  .stage {
+    padding: 24px 16px;
+  }
+
+  .pill {
+    min-width: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .ring {
+    width: 76px;
+    height: 76px;
+  }
+
+  .result {
+    grid-template-columns: 1fr auto;
+  }
+
+  .result-tiles {
+    grid-column: 1 / -1;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes alarm {
+  from {
+    box-shadow: inset 0 0 0 0 rgb(255 40 60 / 0);
+  }
+  to {
+    box-shadow: inset 0 0 180px 30px rgb(255 40 60 / 0.65);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(calc(100vh + 80px)) rotate(var(--spin));
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: translateX(-30px) rotate(-20deg);
+  }
+  to {
+    transform: translateX(30px) rotate(30deg);
+  }
+}
+
+@keyframes bloom {
+  from {
+    transform: rotate(-8deg) scale(0.96);
+  }
+  to {
+    transform: rotate(10deg) scale(1.04);
+  }
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(6deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petals,
+  .deco,
+  .intro-seal,
+  .btn-fight {
+    animation: none;
+  }
+
+  .petal,
+  .petal i {
+    animation: none;
+  }
+}
+
+@keyframes meme-spin-in {
+  from {
+    transform: scale(0) rotate(-540deg);
+  }
+  to {
+    transform: scale(1) rotate(-4deg);
+  }
+}
+
+@keyframes meme-wobble {
+  from {
+    transform: rotate(-4deg) scale(1);
+  }
+  to {
+    transform: rotate(4deg) scale(1.05);
+  }
+}
+
+@keyframes meme-stamp {
+  from {
+    transform: scale(3) rotate(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(-3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-burst {
+  from {
+    transform: rotate(var(--angle)) translateY(0) scale(0.4);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(var(--angle)) translateY(calc(var(--dist) * -1)) rotate(540deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes meme-drop {
+  from {
+    transform: translateY(-120%) rotate(12deg);
+  }
+  to {
+    transform: translateY(0) rotate(3deg);
+  }
+}
+
+@keyframes meme-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(3deg);
+  }
+  25% {
+    transform: translateX(-10px) rotate(1deg);
+  }
+  75% {
+    transform: translateX(10px) rotate(5deg);
+  }
+}
+
+@keyframes meme-zoom {
+  to {
+    transform: scale(1.7);
+  }
+}
+
+@keyframes meme-out {
+  to {
+    transform: translateY(40px) rotate(10deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.06);
+  }
+}
